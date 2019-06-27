@@ -40,12 +40,15 @@ const FULL_HEART = '♥'
      // if there is an error we want to display it for 5 seconds
      .catch((error) => {
        showError(error);
+       /*
+          setTimeout function requires that we reference the function we want to
+          use rather than calling it directly.
+       */
        setTimeout(hideError, 5000);
      })
    })
  }
 
- // This function checks the classList for the like to see if it has been activated
  function updateLikes(specificLike) {
   // Previous if statement is not necessary as toggle has same functionality
   specificLike.classList.toggle('activated-heart')
