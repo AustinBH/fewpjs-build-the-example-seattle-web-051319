@@ -4,6 +4,7 @@ const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
 
+  // Declaring constants to reference errors.
   const errorModal = document.getElementById('modal')
   const errorMessage = document.getElementById('modal-message')
 
@@ -13,7 +14,6 @@ const FULL_HEART = '♥'
  }
 
  function showError(specificError) {
-   console.error("inside showError: ", specificError)
    errorModal.classList.remove('hidden')
    errorMessage.textContent = specificError
  }
@@ -47,15 +47,11 @@ const FULL_HEART = '♥'
 
  // This function checks the classList for the like to see if it has been activated
  function updateLikes(specificLike) {
-   if (specificLike.classList[1] === "activated-heart") {
-     specificLike.classList.remove('activated-heart')
-   }
-   else {
-     specificLike.classList.add('activated-heart')
-   }
+  // Previous if statement is not necessary as toggle has same functionality
+  specificLike.classList.toggle('activated-heart')
  }
 
- // Here is our main function where we call hideError first and then add our listener
+ // Here is our main function where we hide the errors and then create our listener
  function main() {
    hideError()
    likeListener()
