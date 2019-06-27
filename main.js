@@ -37,12 +37,18 @@ const FULL_HEART = '♥'
      .then((response) => {
        updateLikes(like)
      })
-     // if there is an error we want to display it for 5 seconds
+     /*
+     If there is an error we want to display it for 5 seconds.
+     We can confirm that this works by seeing if a heart is added
+     when the error message is displayed. Given that our hearts do
+     not currently change unless there is no error message, we can
+     assume that this is working as intended.
+     */
      .catch((error) => {
        showError(error);
        /*
-          setTimeout function requires that we reference the function we want to
-          use rather than calling it directly.
+          setTimeout function requires that we reference the function
+          we want to use rather than calling it directly.
        */
        setTimeout(hideError, 5000);
      })
